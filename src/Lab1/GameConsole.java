@@ -1,40 +1,43 @@
 package Lab1;
 
 import java.util.Scanner;
-
+/**
+ * Console of a game
+ * @author supisara
+ *
+ */
 public class GameConsole {
 	Scanner scan = new Scanner(System.in);
+	
+	/**
+	 * The default constructor. 
+	 */
 	public GameConsole(){
-
 	}
+	
+	/**
+	 * The play method plays a game using input from a user.
+	 * @param game is GuessingGame that declare from the main class.
+	 * @return the number that user guess correctly
+	 */
 	public int play(GuessingGame game){
 		String title = "Guessing Game";
-		String prompt = "Your guess?";
+		String prompt = "Your guess? ";
+		int number = 0;
+		boolean guessCheck;
 
 		System.out.println(title);
 		System.out.println(game.getHint());
 
-		System.out.println(prompt);
-		int number = scan.nextInt();
-
-		game.setUpperBound(number);
-		game.guess(number);
-		game.setCount();
-		System.out.println(game.getHint());
-
-		while(!game.guess(number)){
-			game.getHint();
-			System.out.println(prompt);
+		do{
+			System.out.print(prompt);
 			number = scan.nextInt();
 
-			game.setUpperBound(number);
-			game.guess(number);
-			game.getHint();
+			guessCheck = game.guess(number);
 			System.out.println(game.getHint());
-			game.setCount();
+		} while(!guessCheck);
 
-		}
 		System.out.println("You used " + game.getCount() + " guesses.");
-		return game.getSecret();
+		return number;
 	}
 }

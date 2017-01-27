@@ -1,4 +1,4 @@
-package Lab1;
+package lab1;
 /**
  * This is main method to compile game console.
  * @author supisara

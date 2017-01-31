@@ -9,17 +9,6 @@ public class GuessingGame {
 	private int secret;
 	private String hint;
 	private int count;
-	
-	/**
-	 * The default constructor. 
-	 */
-	public GuessingGame(){
-		/*properties of a guessing game*/
-		this.upperBound = 0;
-		this.secret = 0;
-		this.hint = "";
-		this.count = 0;
-	}
 
 	/**
 	 * Initialize a new game.

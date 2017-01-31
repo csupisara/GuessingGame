@@ -1,4 +1,4 @@
-package lab1;
+package guessingGame;
 
 import java.util.Scanner;
 /**
